@@ -6,7 +6,7 @@ const Todo = (props) => {
 
     return (
         <>
-            <TodoForm/>
+            <TodoForm todos={props.todos} setTodos={props.setTodos} onSubmit={props.onSubmit}/>
             <div>
                 <TodoItem />
             </div>
