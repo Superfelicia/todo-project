@@ -3,17 +3,26 @@ import {useState} from "react";
 const TodoForm = () => {
     const [value, setValue] = useState('');
 
+
+    const handleChange = (e) => {
+        setValue(e.target.value);
+        console.log(e.target.value);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        //gör en fetch för att POST nya todos
+        //set state
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <input type='text'
                    placeholder='add todo'
-                   //value={input}
+                   //value={props.input}
                    name='text'
-                   //onChange={}
+                   onChange={e => handleChange(e)}
             />
             <button>Add todo</button>
         </form>
